@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -50,7 +51,7 @@ namespace WishList.Controllers
 
         public IActionResult Delete(int id)
         {
-            var user = _userManager.GetUserAsync(HttpContext.User).Result;
+            var user =  _userManager.GetUserAsync(HttpContext.User).Result;
 
             var item = _context.Items.FirstOrDefault(e => e.Id == id);
 

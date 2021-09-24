@@ -37,6 +37,7 @@ namespace WishList.Controllers
             var result = _userManager.CreateAsync(
                 new ApplicationUser()
                 {
+                    UserName = register.Email,
                     Email = register.Email,
                 }, 
                 register.Password
